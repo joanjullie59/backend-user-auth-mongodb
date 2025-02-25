@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Your Details</title>
+</head>
+<body>
+<h2>Edit Details</h2>
+
+{{if .}}
+    <p style="color: red;">{{.}}</p> <!-- Display error message if passwords don't match -->
+{{end}}
+
+<form method="post">
+    <label>Name: <input type="text" name="name" required></label><br>
+    <label>Email: <input type="email" name="email" required></label><br>
+    <label>Password: <input type="password" name="password" required></label><br>
+    <label>Confirm Password: <input type="password" name="confirm_password" required></label><br>
+
+    <!-- Hidden field to determine account creation -->
+    <input type="hidden" name="action" value="edit">
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
+
